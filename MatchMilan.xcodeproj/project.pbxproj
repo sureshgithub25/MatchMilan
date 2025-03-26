@@ -8,21 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		9368D3692D940F05002737A7 /* MatchMilanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3682D940F05002737A7 /* MatchMilanApp.swift */; };
-		9368D36B2D940F05002737A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D36A2D940F05002737A7 /* ContentView.swift */; };
 		9368D36D2D940F06002737A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9368D36C2D940F06002737A7 /* Assets.xcassets */; };
 		9368D3702D940F06002737A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9368D36F2D940F06002737A7 /* Preview Assets.xcassets */; };
-		9368D3722D940F06002737A7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3712D940F06002737A7 /* Persistence.swift */; };
-		9368D3752D940F06002737A7 /* MatchMilan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3732D940F06002737A7 /* MatchMilan.xcdatamodeld */; };
+		9368D37E2D941003002737A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D37D2D941003002737A7 /* HomeView.swift */; };
+		9368D3802D94104F002737A7 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D37F2D94104F002737A7 /* LoaderView.swift */; };
+		9368D3822D94108B002737A7 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3812D94108B002737A7 /* MatchCardView.swift */; };
+		9368D3852D941163002737A7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3842D941163002737A7 /* HomeViewModel.swift */; };
+		9368D3882D941249002737A7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9368D3872D941249002737A7 /* SDWebImageSwiftUI */; };
+		9368D38B2D9418AF002737A7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D38A2D9418AF002737A7 /* CoreDataManager.swift */; };
+		9368D38D2D941979002737A7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D38C2D941979002737A7 /* NetworkManager.swift */; };
+		9368D3922D9426D2002737A7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3912D9426D2002737A7 /* UserModel.swift */; };
+		9368D3952D942755002737A7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3942D942755002737A7 /* DataModel.swift */; };
+		9368D3972D942922002737A7 /* MatchesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3962D942922002737A7 /* MatchesDataProvider.swift */; };
+		9368D39A2D942B8B002737A7 /* MatchMilan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3982D942B8B002737A7 /* MatchMilan.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9368D3652D940F05002737A7 /* MatchMilan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMilan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9368D3682D940F05002737A7 /* MatchMilanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMilanApp.swift; sourceTree = "<group>"; };
-		9368D36A2D940F05002737A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9368D36C2D940F06002737A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9368D36F2D940F06002737A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9368D3712D940F06002737A7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		9368D3742D940F06002737A7 /* MatchMilan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMilan.xcdatamodel; sourceTree = "<group>"; };
+		9368D37D2D941003002737A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9368D37F2D94104F002737A7 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		9368D3812D94108B002737A7 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
+		9368D3842D941163002737A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9368D38A2D9418AF002737A7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9368D38C2D941979002737A7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9368D3912D9426D2002737A7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9368D3942D942755002737A7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		9368D3962D942922002737A7 /* MatchesDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesDataProvider.swift; sourceTree = "<group>"; };
+		9368D3992D942B8B002737A7 /* MatchMilan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMilan.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9368D3882D941249002737A7 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,10 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				9368D3682D940F05002737A7 /* MatchMilanApp.swift */,
-				9368D36A2D940F05002737A7 /* ContentView.swift */,
+				9368D3902D9426C4002737A7 /* Model */,
+				9368D3892D941885002737A7 /* Managers */,
+				9368D3832D94110A002737A7 /* ViewModel */,
+				9368D37C2D940FE2002737A7 /* CustomViews */,
 				9368D36C2D940F06002737A7 /* Assets.xcassets */,
-				9368D3712D940F06002737A7 /* Persistence.swift */,
-				9368D3732D940F06002737A7 /* MatchMilan.xcdatamodeld */,
+				9368D3982D942B8B002737A7 /* MatchMilan.xcdatamodeld */,
 				9368D36E2D940F06002737A7 /* Preview Content */,
 			);
 			path = MatchMilan;
@@ -71,6 +89,43 @@
 				9368D36F2D940F06002737A7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9368D37C2D940FE2002737A7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9368D37D2D941003002737A7 /* HomeView.swift */,
+				9368D37F2D94104F002737A7 /* LoaderView.swift */,
+				9368D3812D94108B002737A7 /* MatchCardView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		9368D3832D94110A002737A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9368D3842D941163002737A7 /* HomeViewModel.swift */,
+				9368D3962D942922002737A7 /* MatchesDataProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9368D3892D941885002737A7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9368D38A2D9418AF002737A7 /* CoreDataManager.swift */,
+				9368D38C2D941979002737A7 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9368D3902D9426C4002737A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9368D3912D9426D2002737A7 /* UserModel.swift */,
+				9368D3942D942755002737A7 /* DataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +144,9 @@
 			dependencies = (
 			);
 			name = MatchMilan;
+			packageProductDependencies = (
+				9368D3872D941249002737A7 /* SDWebImageSwiftUI */,
+			);
 			productName = MatchMilan;
 			productReference = 9368D3652D940F05002737A7 /* MatchMilan.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 9368D35C2D940F05002737A7;
+			packageReferences = (
+				9368D3862D941249002737A7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 9368D3662D940F05002737A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,10 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9368D3722D940F06002737A7 /* Persistence.swift in Sources */,
-				9368D3752D940F06002737A7 /* MatchMilan.xcdatamodeld in Sources */,
-				9368D36B2D940F05002737A7 /* ContentView.swift in Sources */,
+				9368D38D2D941979002737A7 /* NetworkManager.swift in Sources */,
+				9368D39A2D942B8B002737A7 /* MatchMilan.xcdatamodeld in Sources */,
+				9368D3822D94108B002737A7 /* MatchCardView.swift in Sources */,
+				9368D3852D941163002737A7 /* HomeViewModel.swift in Sources */,
+				9368D3952D942755002737A7 /* DataModel.swift in Sources */,
+				9368D3972D942922002737A7 /* MatchesDataProvider.swift in Sources */,
+				9368D37E2D941003002737A7 /* HomeView.swift in Sources */,
+				9368D38B2D9418AF002737A7 /* CoreDataManager.swift in Sources */,
 				9368D3692D940F05002737A7 /* MatchMilanApp.swift in Sources */,
+				9368D3802D94104F002737A7 /* LoaderView.swift in Sources */,
+				9368D3922D9426D2002737A7 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,14 +423,34 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		9368D3862D941249002737A7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9368D3872D941249002737A7 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9368D3862D941249002737A7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		9368D3732D940F06002737A7 /* MatchMilan.xcdatamodeld */ = {
+		9368D3982D942B8B002737A7 /* MatchMilan.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9368D3742D940F06002737A7 /* MatchMilan.xcdatamodel */,
+				9368D3992D942B8B002737A7 /* MatchMilan.xcdatamodel */,
 			);
-			currentVersion = 9368D3742D940F06002737A7 /* MatchMilan.xcdatamodel */;
-			path = MatchMilan.xcdatamodeld;
+			currentVersion = 9368D3992D942B8B002737A7 /* MatchMilan.xcdatamodel */;
+			name = MatchMilan.xcdatamodeld;
+			path = /Users/sureshkumar/Documents/MatchMilan/MatchMilan/MatchMilan.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
