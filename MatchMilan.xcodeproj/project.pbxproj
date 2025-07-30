@@ -15,12 +15,13 @@
 		9368D3822D94108B002737A7 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3812D94108B002737A7 /* MatchCardView.swift */; };
 		9368D3852D941163002737A7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3842D941163002737A7 /* HomeViewModel.swift */; };
 		9368D3882D941249002737A7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9368D3872D941249002737A7 /* SDWebImageSwiftUI */; };
-		9368D38B2D9418AF002737A7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D38A2D9418AF002737A7 /* CoreDataManager.swift */; };
 		9368D38D2D941979002737A7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D38C2D941979002737A7 /* NetworkManager.swift */; };
 		9368D3922D9426D2002737A7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3912D9426D2002737A7 /* UserModel.swift */; };
 		9368D3952D942755002737A7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3942D942755002737A7 /* DataModel.swift */; };
 		9368D3972D942922002737A7 /* MatchesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3962D942922002737A7 /* MatchesDataProvider.swift */; };
 		9368D39A2D942B8B002737A7 /* MatchMilan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9368D3982D942B8B002737A7 /* MatchMilan.xcdatamodeld */; };
+		93EAED592E39D7E40025AA9B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAED582E39D7E40025AA9B /* Network.swift */; };
+		93EAED5A2E39D7E40025AA9B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAED572E39D7E40025AA9B /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +33,13 @@
 		9368D37F2D94104F002737A7 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		9368D3812D94108B002737A7 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
 		9368D3842D941163002737A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		9368D38A2D9418AF002737A7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9368D38C2D941979002737A7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9368D3912D9426D2002737A7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		9368D3942D942755002737A7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		9368D3962D942922002737A7 /* MatchesDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesDataProvider.swift; sourceTree = "<group>"; };
 		9368D3992D942B8B002737A7 /* MatchMilan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMilan.xcdatamodel; sourceTree = "<group>"; };
+		93EAED572E39D7E40025AA9B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		93EAED582E39D7E40025AA9B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,8 @@
 		9368D3892D941885002737A7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				9368D38A2D9418AF002737A7 /* CoreDataManager.swift */,
+				93EAED572E39D7E40025AA9B /* CoreDataManager.swift */,
+				93EAED582E39D7E40025AA9B /* Network.swift */,
 				9368D38C2D941979002737A7 /* NetworkManager.swift */,
 			);
 			path = Managers;
@@ -209,9 +212,10 @@
 				9368D3822D94108B002737A7 /* MatchCardView.swift in Sources */,
 				9368D3852D941163002737A7 /* HomeViewModel.swift in Sources */,
 				9368D3952D942755002737A7 /* DataModel.swift in Sources */,
+				93EAED592E39D7E40025AA9B /* Network.swift in Sources */,
+				93EAED5A2E39D7E40025AA9B /* CoreDataManager.swift in Sources */,
 				9368D3972D942922002737A7 /* MatchesDataProvider.swift in Sources */,
 				9368D37E2D941003002737A7 /* HomeView.swift in Sources */,
-				9368D38B2D9418AF002737A7 /* CoreDataManager.swift in Sources */,
 				9368D3692D940F05002737A7 /* MatchMilanApp.swift in Sources */,
 				9368D3802D94104F002737A7 /* LoaderView.swift in Sources */,
 				9368D3922D9426D2002737A7 /* UserModel.swift in Sources */,

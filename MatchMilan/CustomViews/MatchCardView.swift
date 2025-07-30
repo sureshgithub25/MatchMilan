@@ -61,7 +61,8 @@ struct MatchCardView: View {
                 .padding(.vertical, 10)
             }
         }
-        .padding()
+        .padding(.horizontal, 12)
+        .frame(maxWidth: .infinity, maxHeight: 420)
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(
@@ -71,7 +72,6 @@ struct MatchCardView: View {
                 )
                 .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
         )
-        .frame(maxWidth: .infinity, maxHeight: 420)
         .padding(.horizontal, 8)
     }
     
@@ -114,18 +114,6 @@ struct MatchCardView: View {
             .cornerRadius(12)
             .padding(.top, 8)
     }
-}
-
-#Preview {
-    MatchCardView(
-        data: .constant(MatchUser(
-            id: "1",
-            profileImage: "",
-            name: "Jane Smith",
-            address: "123 Street, New York, USA",
-            status: MatchResult.pending.rawValue
-        ))
-    )
 }
 
 

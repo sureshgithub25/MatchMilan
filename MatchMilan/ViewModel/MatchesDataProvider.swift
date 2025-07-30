@@ -7,56 +7,50 @@
 
 import Foundation
 import SystemConfiguration
+import Combine
 
-class MatchesDataProvider {
+protocol MatchesDataProviderProtocol {
+    func fetchRemoteMatches(page: Int, perPage: Int) -> AnyPublisher<[MatchUser], APIError>
+    func fetchLocalMatches() -> AnyPublisher<[MatchUser], APIError>
+    var shouldFallbackToLocal: Bool { get set }
+}
+
+final class MatchesDataProvider: MatchesDataProviderProtocol {
+    private let networkService: NetworkServiceProtocol
+    private let coreDataManager: CoreDataManagerProtocol
+    private let networkMonitor: NetworkMonitorProtocol
     
-    // Fetch profile matches either from server or local storage based on network availability
-    func getProfileMatches(onSuccess: @escaping ([MatchUser]) -> Void,
-                           onFailure: @escaping (String) -> Void) {
-        if isNetworkAvailable() {
-            NetworkManager.shared.performRequest(for: .fetchMatches,
-                                                 responseType: UserAPIResponse.self) { result in
-                switch result {
-                case .success(let responseData):
-                    let profiles = MatchUser.from(response: responseData)
-                    
-                    profiles.forEach { profile in
-                        let (exists, _) = CoreDataManager.shared.objectExists(ofType: UserMatch.self,
-                                                                              matchingID: profile.id,
-                                                                              withKey: "id")
-                        
-                        if !exists {
-                            let newUser = CoreDataManager.shared.createObject(ofType: UserMatch.self)
-                            newUser.name = profile.name
-                            newUser.address = profile.address
-                            newUser.status = profile.status
-                            newUser.id = profile.id
-                            newUser.profileImage = profile.profileImage
-                            CoreDataManager.shared.saveChanges()
-                        }
-                    }
-                    
-                    onSuccess(profiles)
-                    
-                case .failure(let networkError):
-                    let errorMessage: String
-                    switch networkError {
-                    case .invalidURL:
-                        errorMessage = networkError.errorDescription
-                    case .noResponse:
-                        errorMessage = networkError.errorDescription
-                    case .decodingFailed:
-                        errorMessage = networkError.errorDescription
-                    case .serverError(let statusCode):
-                        errorMessage = "Server returned error code: \(statusCode)"
-                    case .custom(let message):
-                        errorMessage = message
-                    }
-                    onFailure(errorMessage)
-                }
+    var shouldFallbackToLocal = true
+    
+    init(networkService: NetworkServiceProtocol = NetworkService.shared,
+         coreDataManager: CoreDataManagerProtocol = CoreDataManager.shared,
+         networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared) {
+        self.networkService = networkService
+        self.coreDataManager = coreDataManager
+        self.networkMonitor = networkMonitor
+    }
+    
+    func fetchRemoteMatches(page: Int, perPage: Int) -> AnyPublisher<[MatchUser], APIError> {
+        guard networkMonitor.isConnected else {
+            if shouldFallbackToLocal {
+                shouldFallbackToLocal = false // Only fallback once
+                return fetchLocalMatches()
             }
-        } else {
-            let storedMatches = CoreDataManager.shared.fetchAll(ofType: UserMatch.self)
+            return Fail(error: APIError.noInternetConnection).eraseToAnyPublisher()
+        }
+        
+        return networkService.request(MatchesEndpoint.fetchMatches(page: page, perPage: perPage))
+            .map { (response: UserAPIResponse) in
+                let matches = MatchUser.from(response: response)
+                self.saveMatchesToCoreData(matches: matches)
+                return matches
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func fetchLocalMatches() -> AnyPublisher<[MatchUser], APIError> {
+        Future<[MatchUser], APIError> { promise in
+            let storedMatches = self.coreDataManager.fetchAll(ofType: UserMatch.self)
             var profiles: [MatchUser] = []
             
             for storedUser in storedMatches {
@@ -71,29 +65,31 @@ class MatchesDataProvider {
                     profiles.append(profileModel)
                 }
             }
-            onSuccess(profiles)
+            
+            if profiles.isEmpty {
+                promise(.failure(.noResults))
+            } else {
+                promise(.success(profiles))
+            }
         }
+        .eraseToAnyPublisher()
     }
     
-    // Check for active internet connection
-    private func isNetworkAvailable() -> Bool {
-        var address = sockaddr_in()
-        address.sin_len = UInt8(MemoryLayout.size(ofValue: address))
-        address.sin_family = sa_family_t(AF_INET)
-        
-        guard let reachability = withUnsafePointer(to: &address, {
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { pointer in
-                SCNetworkReachabilityCreateWithAddress(nil, pointer)
+    private func saveMatchesToCoreData(matches: [MatchUser]) {
+        matches.forEach { match in
+            let (exists, _) = coreDataManager.objectExists(ofType: UserMatch.self,
+                                                          matchingID: match.id,
+                                                          withKey: "id")
+            
+            if !exists {
+                let newUser = coreDataManager.createObject(ofType: UserMatch.self)
+                newUser.name = match.name
+                newUser.address = match.address
+                newUser.status = match.status
+                newUser.id = match.id
+                newUser.profileImage = match.profileImage
+                coreDataManager.saveChanges()
             }
-        }) else {
-            return false
         }
-        
-        var flags = SCNetworkReachabilityFlags()
-        if !SCNetworkReachabilityGetFlags(reachability, &flags) {
-            return false
-        }
-        
-        return flags.contains(.reachable) && !flags.contains(.connectionRequired)
     }
 }
